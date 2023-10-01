@@ -1,5 +1,6 @@
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../../firebase";
+import { SignInButton } from "./SignStyles";
 
 const Sign = ({ type }) => {
   const buttonFunction = () => {
@@ -10,9 +11,9 @@ const Sign = ({ type }) => {
     }
   };
   return (
-    <div>
-      <button onClick={buttonFunction}>Sign in</button>
-    </div>
+    <SignInButton onClick={buttonFunction}>
+      {type === "in" ? "Sign in" : "Sign out"}
+    </SignInButton>
   );
 };
 

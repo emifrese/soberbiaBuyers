@@ -12,13 +12,21 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
 }
 
+#root {
+  width: 100%;
+  height: 100%
+}
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes slideDown {
+  0% {opacity: 0; transform: translateY(-3rem)}
+  100% {opacity: 1; transform: translateY(0)}
 }
