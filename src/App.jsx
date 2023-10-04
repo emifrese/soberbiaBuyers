@@ -17,9 +17,9 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, setUser);
 
-    console.log(auth.currentUser.uid)
-
+    
     if (user !== null) {
+      console.log(auth.currentUser.uid)
       const { displayName, email, photoURL } = user;
       dispatch(setUserInfo({ displayName, email, photoURL }));
       onSnapshot(collection(firestore, `arrogants`), (snapshot) => {

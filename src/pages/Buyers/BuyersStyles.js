@@ -16,18 +16,18 @@ export const BuyerByIdLabel = styled.label`
 export const BuyerByIDInput = styled.input`
 `
 
-export const BuyersList = styled.ul`
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  padding: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem; 
-`;
+// export const BuyersList = styled.ul`
+//   list-style: none;
+//   padding: 0;
+//   width: 100%;
+//   height: 100%;
+//   overflow: scroll;
+//   padding: 1rem 0;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 1rem; 
+// `;
 
 export const BuyerItem = styled.li`
   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px;
