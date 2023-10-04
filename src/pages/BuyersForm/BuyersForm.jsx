@@ -14,7 +14,7 @@ const BuyersForm = () => {
   return (
     <>
       {modal && (
-        <Modal width={'50%'} top={'50%'} left={'50%'}>
+        <Modal width={"50%"} top={"50%"} left={"50%"} height={"100%"}>
           <Spinner />
         </Modal>
       )}

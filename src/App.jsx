@@ -19,7 +19,6 @@ function App() {
 
     
     if (user !== null) {
-      console.log(auth.currentUser.uid)
       const { displayName, email, photoURL } = user;
       dispatch(setUserInfo({ displayName, email, photoURL }));
       onSnapshot(collection(firestore, `arrogants`), (snapshot) => {
@@ -32,6 +31,7 @@ function App() {
           );
         if(auth.currentUser.uid === "y2FrPOmlepdy3NK0D88OQnGXUY83"){
           dispatch(getBuyers(buyersArray));
+          console.log(buyersArray)
           dispatch(setBuyersAmount(buyersArray.length));
         } else {
           dispatch(getBuyers(personalArrogants));

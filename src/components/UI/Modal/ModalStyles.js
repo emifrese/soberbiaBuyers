@@ -27,11 +27,11 @@ export const ModalDiv = styled.div`
   position: fixed;
   top: ${props => props.top};
   width: ${props => props.width};
+  height: ${props => props.height};
   z-index: 30;
   color: rgba(255, 255, 255, 0.87);
   text-align: center;
   max-width: inherit;
-  max-height: 85%;
   /* top: 50%; */
   left: ${props => props.left};
   margin-left: -26.5%;

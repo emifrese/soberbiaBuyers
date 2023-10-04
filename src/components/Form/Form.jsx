@@ -28,15 +28,15 @@ const Form = ({ Toggle }) => {
   };
 
   const IDChangeHandler = (e) => {
-    setEnteredID(e.target.value);
+    setEnteredID(e.target.value.trim());
   };
 
   const payChangeHandler = (e) => {
-    setEnteredPay(e.target.value);
+    setEnteredPay(e.target.value.trim());
   };
 
   const priceChangeHandler = (e) => {
-    setEnteredPrice(e.target.value);
+    setEnteredPrice(e.target.value.trim());
   };
 
   const submitHandler = async (e) => {
@@ -111,8 +111,8 @@ const Form = ({ Toggle }) => {
     const arrogantRef = collection(firestore, "arrogants");
 
     const arrogantData = {
-      name: enteredName,
-      surname: enteredSurname,
+      name: enteredName.trim(),
+      surname: enteredSurname.trim(),
       ID: enteredID,
       pay: enteredPay,
       user: auth.currentUser.email,

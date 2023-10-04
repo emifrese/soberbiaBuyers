@@ -33,8 +33,8 @@ const Buyers = () => {
   return (
     <>
       {modal && (
-        <Modal top={"20%"} width={"90%"} left={"30%"} Toggle={Toggle}>
-          <BuyersList buyers={buyers} payID={payID} check={null}></BuyersList>
+        <Modal top={"10%"} width={"90%"} left={"30%"} height={"70%"} Toggle={Toggle}>
+          <BuyersList buyers={buyers} payID={payID} check={null} modal={modal}></BuyersList>
         </Modal>
       )}
       <BackButton />

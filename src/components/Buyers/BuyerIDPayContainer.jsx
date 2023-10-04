@@ -4,7 +4,7 @@ const BuyerIDPayContainer = ({ ID, pay }) => {
   return (
     <BuyerIDPay>
       <p>{ID}</p>
-      <p>Monto: {pay}</p>
+      <p>Nro Comprobante: {pay}</p>
     </BuyerIDPay>
   );
 };

@@ -6,10 +6,10 @@ const Backdrop = ({Toggle}) => {
   return <BackdropDiv onClick={Toggle}/>;
 };
 
-const ModalOverlay = ({ children, top, width, left }) => {
+const ModalOverlay = ({ children, top, width, left, height }) => {
   return (
     <ModalOverlayDiv>
-      <ModalDiv top={top} width={width} left={left}>
+      <ModalDiv top={top} width={width} left={left} height={height}>
         <>{children}</>
       </ModalDiv>
     </ModalOverlayDiv>
@@ -18,12 +18,12 @@ const ModalOverlay = ({ children, top, width, left }) => {
 
 const portalElement = document.getElementById("overlays");
 
-const Modal = ({ children, top, width, left, Toggle }) => {
+const Modal = ({ children, top, width, left, height, Toggle }) => {
   return (
     <>
       {ReactDOM.createPortal(<Backdrop Toggle={Toggle} />, portalElement)}
       {ReactDOM.createPortal(
-        <ModalOverlay top={top} width={width} left={left}>{children}</ModalOverlay>,
+        <ModalOverlay top={top} width={width} left={left} height={height}>{children}</ModalOverlay>,
         portalElement
       )}
     </>
