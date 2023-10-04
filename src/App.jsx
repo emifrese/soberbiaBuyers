@@ -31,7 +31,6 @@ function App() {
           );
         if(auth.currentUser.uid === "y2FrPOmlepdy3NK0D88OQnGXUY83"){
           dispatch(getBuyers(buyersArray));
-          console.log(buyersArray)
           dispatch(setBuyersAmount(buyersArray.length));
         } else {
           dispatch(getBuyers(personalArrogants));

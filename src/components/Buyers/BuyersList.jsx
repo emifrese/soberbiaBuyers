@@ -6,7 +6,6 @@ import BuyersPayContainer from "./BuyersPayContainer";
 import PayTitleContainer from "./PayTitleContainer";
 
 const BuyersList = ({ buyers, payID, check, expandPayID, modal }) => {
-  console.log(payID)
   if (payID && modal) {
     return (
       <BuyersListUl>

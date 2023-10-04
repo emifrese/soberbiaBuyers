@@ -8,8 +8,6 @@ const Stats = () => {
     const {buyers} = useSelector(state => state.buyers)
     const {buyersAmount, email} = useSelector(state => state.user);
     const moneyAccumulated = buyers.reduce((acc, current) => acc + parseInt(current.price), 0);
-    console.log(moneyAccumulated)
-
   return (
     <StatsWrapper>
         <BackButton/>
