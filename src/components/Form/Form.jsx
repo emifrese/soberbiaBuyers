@@ -3,7 +3,7 @@ import { FormContainer, LabelContainer, LabelItem } from "./FormStyles.js";
 import { auth, firestore } from "../../firebase.js";
 import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
-import { calculatePrice } from "../../helpers/functions/priceCalculator.js";
+// import { calculatePrice } from "../../helpers/functions/priceCalculator.js";
 import { useSelector } from "react-redux";
 import { findRepeatedID } from "../../helpers/functions/findeRepeatedID.JS";
 
@@ -17,7 +17,7 @@ const Form = ({ Toggle }) => {
 
   const {buyers} = useSelector((state) => state.buyers);
 
-  const suggestedPrice = calculatePrice();
+  // const suggestedPrice = calculatePrice(); This is getting error today 4/10 at 22:41
 
   const nameChangeHandler = (e) => {
     setEnteredName(e.target.value);
@@ -251,42 +251,42 @@ const Form = ({ Toggle }) => {
             >
               <option value="">Elegi un precio</option>
               <option
-                style={
-                  suggestedPrice === 3500
-                    ? { backgroundColor: "green" }
-                    : { backgroundColor: "white" }
-                }
-                value="3500"
+                // style={
+                //   suggestedPrice === 3500
+                //     ? { backgroundColor: "green" }
+                //     : { backgroundColor: "white" }
+                // }
+                // value="3500"
               >
                 3500
               </option>
               <option
-                style={
-                  suggestedPrice === 4000
-                    ? { backgroundColor: "green" }
-                    : { backgroundColor: "white" }
-                }
-                value="4000"
+                // style={
+                //   suggestedPrice === 4000
+                //     ? { backgroundColor: "green" }
+                //     : { backgroundColor: "white" }
+                // }
+                // value="4000"
               >
                 4000
               </option>
               <option
-                style={
-                  suggestedPrice === 4500
-                    ? { backgroundColor: "green" }
-                    : { backgroundColor: "white" }
-                }
-                value="4500"
+                // style={
+                //   suggestedPrice === 4500
+                //     ? { backgroundColor: "green" }
+                //     : { backgroundColor: "white" }
+                // }
+                // value="4500"
               >
                 4500
               </option>
               <option
-                style={
-                  suggestedPrice === 5000
-                    ? { backgroundColor: "green" }
-                    : { backgroundColor: "white" }
-                }
-                value="5000"
+                // style={
+                //   suggestedPrice === 5000
+                //     ? { backgroundColor: "green" }
+                //     : { backgroundColor: "white" }
+                // }
+                // value="5000"
               >
                 5000
               </option>
