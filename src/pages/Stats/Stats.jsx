@@ -9,7 +9,6 @@ const Stats = () => {
   const { buyers } = useSelector((state) => state.buyers);
   const amountMale = buyers.filter((buyer) => buyer.gender === "male").length;
   const amountFemale = buyers.filter((buyer) => buyer.gender === "female").length 
-//   buyers.length - amountMale;
   const { buyersAmount, email } = useSelector((state) => state.user);
   const moneyAccumulated = buyers.reduce(
     (acc, current) => acc + parseInt(current.price),
