@@ -28,7 +28,6 @@ function App() {
         }));
           dispatch(getBuyers(buyersArray));
           dispatch(setBuyersAmount(buyersArray.length));
-          console.log(buyersArray)
       });
     }
   }, [user, dispatch]);
