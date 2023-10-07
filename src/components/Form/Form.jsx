@@ -11,11 +11,12 @@ const Form = ({ Toggle }) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredSurname, setEnteredSurname] = useState("");
   const [enteredID, setEnteredID] = useState("");
+  const [enteredGender, setEnteredGender] = useState("");
   const [enteredPay, setEnteredPay] = useState("");
   const [enteredPrice, setEnteredPrice] = useState("");
   const [validation, setValidation] = useState([]);
 
-  const {buyers} = useSelector((state) => state.buyers);
+  const { buyers } = useSelector((state) => state.buyers);
 
   // const suggestedPrice = calculatePrice(); This is getting error today 4/10 at 22:41
 
@@ -31,12 +32,17 @@ const Form = ({ Toggle }) => {
     setEnteredID(e.target.value.trim());
   };
 
+  const genderChangeHandler = (e) => {
+    setEnteredGender(e.target.value);
+  };
+
   const payChangeHandler = (e) => {
     setEnteredPay(e.target.value.trim());
   };
 
   const priceChangeHandler = (e) => {
-    setEnteredPrice(e.target.value.trim());
+    setEnteredPrice(e.target.value);
+    console.log(e.target.value);
   };
 
   const submitHandler = async (e) => {
@@ -84,6 +90,16 @@ const Form = ({ Toggle }) => {
       error = true;
     }
 
+    if (enteredGender === "") {
+      setValidation((state) => {
+        if (!state.includes("gender")) {
+          return [...state, "gender"];
+        }
+        return state;
+      });
+      error = true;
+    }
+
     if (enteredPay === "") {
       setValidation((state) => {
         if (!state.includes("pay")) {
@@ -102,7 +118,7 @@ const Form = ({ Toggle }) => {
         return state;
       });
       error = true;
-    }
+    } 
 
     if (error) {
       return;
@@ -114,9 +130,10 @@ const Form = ({ Toggle }) => {
       name: enteredName.trim(),
       surname: enteredSurname.trim(),
       ID: enteredID,
+      gender: enteredGender,
       pay: enteredPay,
       user: auth.currentUser.email,
-      price: enteredPrice
+      price: enteredPrice,
     };
 
     Toggle();
@@ -128,6 +145,7 @@ const Form = ({ Toggle }) => {
     setEnteredName("");
     setEnteredSurname("");
     setEnteredID("");
+    setEnteredGender("");
     setEnteredPay("");
     setEnteredPrice("");
     setValidation([]);
@@ -207,6 +225,33 @@ const Form = ({ Toggle }) => {
           </LabelItem>
         </li>
         <li>
+          <LabelItem>
+            Genero
+            <select
+              id="arrogantGender"
+              name="gender"
+              style={
+                validation.includes("gender")
+                  ? { boxShadow: "0px 0px 5px 3px rgba(255,0,0,0.75)" }
+                  : { boxShadow: "none" }
+              }
+              value={enteredGender}
+              onChange={genderChangeHandler}
+              onBlur={() => {
+                if (enteredGender !== "") {
+                  setValidation((state) =>
+                    state.filter((el) => el !== "gender")
+                  );
+                }
+              }}
+            >
+              <option value="">Elegi un genero</option>
+              <option value={"male"}>Hombre</option>
+              <option value={"female"}>Mujer</option>
+            </select>
+          </LabelItem>
+        </li>
+        <li>
           <LabelItem htmlFor="arrogantPay">
             Nro de Transacción
             <input
@@ -222,7 +267,7 @@ const Form = ({ Toggle }) => {
               onChange={payChangeHandler}
               onBlur={() => {
                 if (enteredPay !== "") {
-                  setValidation((state) => state.filter((el) => el !== "ID"));
+                  setValidation((state) => state.filter((el) => el !== "pay"));
                 }
               }}
             />
@@ -250,37 +295,11 @@ const Form = ({ Toggle }) => {
               }}
             >
               <option value="">Elegi un precio</option>
+              <option value={"3500"}>3500</option>
+              <option value={"4000"}>4000</option>
+              <option value={"4500"}>4500</option>
               <option
-                // style={
-                //   suggestedPrice === 3500
-                //     ? { backgroundColor: "green" }
-                //     : { backgroundColor: "white" }
-                // }
-                // value="3500"
-              >
-                3500
-              </option>
-              <option
-                // style={
-                //   suggestedPrice === 4000
-                //     ? { backgroundColor: "green" }
-                //     : { backgroundColor: "white" }
-                // }
-                // value="4000"
-              >
-                4000
-              </option>
-              <option
-                // style={
-                //   suggestedPrice === 4500
-                //     ? { backgroundColor: "green" }
-                //     : { backgroundColor: "white" }
-                // }
-                // value="4500"
-              >
-                4500
-              </option>
-              <option
+                value={"5000"}
                 // style={
                 //   suggestedPrice === 5000
                 //     ? { backgroundColor: "green" }

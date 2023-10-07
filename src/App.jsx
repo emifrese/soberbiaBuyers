@@ -31,6 +31,8 @@ function App() {
           );
         if(auth.currentUser.uid === "y2FrPOmlepdy3NK0D88OQnGXUY83"){
           dispatch(getBuyers(buyersArray));
+          const buyersWithoutGender = buyersArray.filter(buyer => buyer.gender === "male" || buyer.gender === "female").length
+          console.log(buyersWithoutGender, buyersArray.length)
           dispatch(setBuyersAmount(buyersArray.length));
         } else {
           dispatch(getBuyers(personalArrogants));
