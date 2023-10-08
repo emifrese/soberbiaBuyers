@@ -17,7 +17,6 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, setUser);
 
-    
     if (user !== null) {
       const { displayName, email, photoURL } = user;
       dispatch(setUserInfo({ displayName, email, photoURL }));
@@ -26,8 +25,9 @@ function App() {
           ...doc.data(),
           id: doc.id,
         }));
-          dispatch(getBuyers(buyersArray));
-          dispatch(setBuyersAmount(buyersArray.length));
+        dispatch(getBuyers(buyersArray));
+        console.log(buyersArray);
+        dispatch(setBuyersAmount(buyersArray.length));
       });
     }
   }, [user, dispatch]);

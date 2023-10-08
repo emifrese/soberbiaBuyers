@@ -30,6 +30,14 @@ const Buyers = () => {
   const checkboxHandler = () => {
     setCheck((state) => !state);
   };
+
+  // const findChange = (ID) => {
+  //   const tradeBuyer = buyers.filter(buyer => buyer.ID === ID);
+  //   console.log(tradeBuyer);
+  // }
+
+  // findChange("43016141")
+
   return (
     <>
       {modal && (

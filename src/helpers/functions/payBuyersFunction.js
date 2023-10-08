@@ -1,6 +1,8 @@
 export const payBuyersArray = (arrayToArrange) => {
     const byPayBuyers = [];
 
+
+
     arrayToArrange.forEach((buyer) => {
       const index = byPayBuyers.findIndex(
         (payBuyer) => payBuyer.pay === buyer.pay
@@ -27,5 +29,8 @@ export const payBuyersArray = (arrayToArrange) => {
         });
       }
     });
-    return byPayBuyers;
+
+    const byPayMultiple = byPayBuyers.filter(byPay => byPay.people.length > 1).sort((a,b) => b.people.length - a.people.length)
+    
+    return byPayMultiple;
   };
