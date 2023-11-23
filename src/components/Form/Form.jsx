@@ -42,7 +42,6 @@ const Form = ({ Toggle }) => {
 
   const priceChangeHandler = (e) => {
     setEnteredPrice(e.target.value);
-    console.log(e.target.value);
   };
 
   const submitHandler = async (e) => {
@@ -133,7 +132,7 @@ const Form = ({ Toggle }) => {
       gender: enteredGender,
       pay: enteredPay,
       user: auth.currentUser.email,
-      price: enteredPrice,
+      price: 5000,
     };
 
     Toggle();
@@ -273,7 +272,7 @@ const Form = ({ Toggle }) => {
             />
           </LabelItem>
         </li>
-        <li>
+        {/* <li>
           <LabelItem>
             Precio
             <select
@@ -311,7 +310,7 @@ const Form = ({ Toggle }) => {
               </option>
             </select>
           </LabelItem>
-        </li>
+        </li> */}
       </LabelContainer>
       <SubmitButton>Submit</SubmitButton>
     </FormContainer>

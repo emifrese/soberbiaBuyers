@@ -31,6 +31,7 @@ const Buyers = () => {
     setCheck((state) => !state);
   };
 
+  const buyerSorted = [...buyers].sort((a,b) => a.surname.localeCompare(b.surname));
   // const findChange = (ID) => {
   //   const tradeBuyer = buyers.filter(buyer => buyer.ID === ID);
   //   console.log(tradeBuyer);
@@ -55,7 +56,7 @@ const Buyers = () => {
             onChange={checkboxHandler}
           />
         </BuyerByIdLabel>
-        <BuyersList buyers={check ? byPayBuyers : buyers} payID={payID} expandPayID={expandPayID} check={check}/>
+        <BuyersList buyers={check ? byPayBuyers : buyerSorted} payID={payID} expandPayID={expandPayID} check={check}/>
       </BuyerContainer>
     </>
   );

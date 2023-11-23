@@ -26,7 +26,6 @@ function App() {
           id: doc.id,
         }));
         dispatch(getBuyers(buyersArray));
-        console.log(buyersArray);
         dispatch(setBuyersAmount(buyersArray.length));
       });
     }
