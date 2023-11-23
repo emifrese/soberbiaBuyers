@@ -20,7 +20,7 @@ function App() {
     if (user !== null) {
       const { displayName, email, photoURL } = user;
       dispatch(setUserInfo({ displayName, email, photoURL }));
-      onSnapshot(collection(firestore, `arrogants`), (snapshot) => {
+      onSnapshot(collection(firestore, `arrogantsBigg`), (snapshot) => {
         let buyersArray = snapshot.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,

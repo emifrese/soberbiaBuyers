@@ -124,7 +124,7 @@ const Form = ({ Toggle }) => {
       return;
     }
 
-    const arrogantRef = collection(firestore, "arrogants");
+    const arrogantRef = collection(firestore, "arrogantsBigg");
 
     const arrogantData = {
       name: enteredName.trim(),
