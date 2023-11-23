@@ -31,13 +31,14 @@ export const LinkList = styled.ul`
 
 export const LinkListElement = styled.li`
   padding: 0.5rem 0.75rem;
-  background-color: red;
+  background-color: #bffc3f;
   list-style: none;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   text-align: center;
 
   a{
     text-decoration: none;
-    color: white
+    font-weight: 600;
+    color: #000
   }
 `;

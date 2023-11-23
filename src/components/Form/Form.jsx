@@ -1,4 +1,4 @@
-import { FormContainer, LabelContainer, LabelItem } from "./FormStyles.js";
+import { FormContainer, LabelContainer, LabelItem, SubmitButton } from "./FormStyles.js";
 
 import { auth, firestore } from "../../firebase.js";
 import { addDoc, collection } from "firebase/firestore";
@@ -313,7 +313,7 @@ const Form = ({ Toggle }) => {
           </LabelItem>
         </li>
       </LabelContainer>
-      <button>Submit</button>
+      <SubmitButton>Submit</SubmitButton>
     </FormContainer>
   );
 };

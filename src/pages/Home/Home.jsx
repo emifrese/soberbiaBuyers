@@ -2,12 +2,14 @@ import { useSelector } from "react-redux";
 import Sign from "../../components/UI/Sign/Sign";
 import { HeaderName, HomeWrapper, LinkList, LinkListElement } from "./HomeStyles";
 import { Link } from "react-router-dom";
+import PartyWrapper from "../../components/Logo/PartyWrapper";
 
 const Home = () => {
   const { displayName } = useSelector((state) => state.user);
 
   return (
     <HomeWrapper>
+      <PartyWrapper></PartyWrapper>
       <HeaderName>{displayName}</HeaderName>
       <LinkList>
         <LinkListElement>

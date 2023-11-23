@@ -32,3 +32,14 @@ export const LabelItem = styled.label`
     -moz-appearance: textfield; /* Firefox */
   }
 `;
+
+export const SubmitButton = styled.button`
+  padding: 0.5rem 0.75rem;
+  width: 50%;
+  background-color: #bffc3f;
+  border-radius: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  color: #000
+`
