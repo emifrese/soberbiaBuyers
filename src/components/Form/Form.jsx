@@ -109,15 +109,15 @@ const Form = ({ Toggle }) => {
       error = true;
     }
 
-    if (enteredPrice === "") {
-      setValidation((state) => {
-        if (!state.includes("price")) {
-          return [...state, "price"];
-        }
-        return state;
-      });
-      error = true;
-    } 
+    // if (enteredPrice === "") {
+    //   setValidation((state) => {
+    //     if (!state.includes("price")) {
+    //       return [...state, "price"];
+    //     }
+    //     return state;
+    //   });
+    //   error = true;
+    // } 
 
     if (error) {
       return;
