@@ -69,7 +69,7 @@ const Form = ({ Toggle }) => {
       error = true;
     }
 
-    if (enteredID < 1000000 || enteredID > 999999999) {
+    if (enteredID < 1000000) {
       setValidation((state) => {
         if (!state.includes("ID")) {
           return [...state, "ID"];
