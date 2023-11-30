@@ -3,7 +3,7 @@ import BackButton from "../../components/UI/BackButton/BackButton";
 import { StatItem, StatsList, StatsWrapper } from "./StatsStyles";
 
 import maleImg from "../../assets/male.svg";
-import femaleImg from "../../assets/male.svg";
+import femaleImg from "../../assets/female.svg";
 
 const Stats = () => {
   const { buyers } = useSelector((state) => state.buyers);
